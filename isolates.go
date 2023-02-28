@@ -28,13 +28,17 @@ func New(config Config) fiber.Handler {
 		iso := v8.NewIsolate()
 		global := v8.NewObjectTemplate(iso)
 
-		events := make(chan *v8.Object)
+		defer iso.Dispose()
 
-		if err := listener.AddTo(iso, global, listener.WithEvents("request", events)); err != nil {
+		in := make(chan *v8.Object)
+		out := make(chan *v8.Value)
+
+		if err := listener.AddTo(iso, global, listener.WithEvents("request", in, out)); err != nil {
 			return c.SendStatus(fiber.StatusBadRequest)
 		}
 
 		ctx := v8.NewContext(iso, global)
+		defer ctx.Close()
 
 		_, err := ctx.RunScript("addListener('request', event => { return event.sourceIP === '127.0.0.1' })", "listener.js")
 		if err != nil {
@@ -51,9 +55,16 @@ func New(config Config) fiber.Handler {
 			return c.SendStatus(fiber.StatusBadRequest)
 		}
 
-		events <- obj
+		in <- obj
 
-		return c.SendStatus(fiber.StatusOK)
+		v := <-out
+		defer func() { v.Release() }()
+
+		if v.IsBoolean() {
+			return c.SendStatus(fiber.StatusOK)
+		}
+
+		return c.SendStatus(fiber.StatusUnauthorized)
 	}
 }
 

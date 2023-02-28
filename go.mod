@@ -6,7 +6,7 @@ require (
 	github.com/gofiber/fiber/v2 v2.42.0
 	github.com/golang/mock v1.6.0
 	github.com/golangci/golangci-lint v1.51.2
-	github.com/ionos-cloud/v8go-polyfills v0.0.0-20230227195732-dc72d6642fe6
+	github.com/ionos-cloud/v8go-polyfills v0.0.0-20230228195223-e573af88e3fd
 	mvdan.cc/gofumpt v0.4.0
 )
 
