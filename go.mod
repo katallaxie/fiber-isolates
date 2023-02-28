@@ -6,6 +6,7 @@ require (
 	github.com/gofiber/fiber/v2 v2.42.0
 	github.com/golang/mock v1.6.0
 	github.com/golangci/golangci-lint v1.51.2
+	github.com/ionos-cloud/v8go-polyfills v0.0.0-20230227195732-dc72d6642fe6
 	mvdan.cc/gofumpt v0.4.0
 )
 
@@ -191,4 +192,5 @@ require (
 	mvdan.cc/interfacer v0.0.0-20180901003855-c20040233aed // indirect
 	mvdan.cc/lint v0.0.0-20170908181259-adc824a0674b // indirect
 	mvdan.cc/unparam v0.0.0-20221223090309-7455f1af531d // indirect
+	rogchap.com/v8go v0.8.0 // indirect
 )
