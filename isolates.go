@@ -6,17 +6,23 @@ package isolates
 
 import (
 	"github.com/gofiber/fiber/v2"
-	"github.com/ionos-cloud/v8go-polyfills/console"
 	"github.com/ionos-cloud/v8go-polyfills/listener"
 
 	v8 "rogchap.com/v8go"
 )
+
+// Injector ...
+type Injector func(*fiber.Ctx, *v8.Isolate, *v8.ObjectTemplate) error
 
 // Config is the config for the isolates middleware
 type Config struct {
 	// Filter defines a function to skip the middleware.
 	// Optional. Default: nil
 	Filter func(*fiber.Ctx) bool
+
+	// Injetion defines a function to inject the context into the isolate.
+	// Optional. Default: nil
+	Injetion []Injector
 
 	// Next defines a function to skip this middleware
 	Next func(*fiber.Ctx) bool
@@ -29,6 +35,12 @@ func New(config Config) fiber.Handler {
 		global := v8.NewObjectTemplate(iso)
 
 		defer iso.Dispose()
+
+		for _, inject := range config.Injetion {
+			if err := inject(c, iso, global); err != nil {
+				return c.SendStatus(fiber.StatusBadRequest)
+			}
+		}
 
 		in := make(chan *v8.Object)
 		out := make(chan *v8.Value)
@@ -43,10 +55,6 @@ func New(config Config) fiber.Handler {
 		_, err := ctx.RunScript("addListener('request', event => { return event.sourceIP === '127.0.0.1' })", "listener.js")
 		if err != nil {
 
-			return c.SendStatus(fiber.StatusBadRequest)
-		}
-
-		if err := console.AddTo(ctx); err != nil {
 			return c.SendStatus(fiber.StatusBadRequest)
 		}
 
