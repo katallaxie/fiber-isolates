@@ -31,6 +31,9 @@ type Config struct {
 // New ...
 func New(config Config) fiber.Handler {
 	return func(c *fiber.Ctx) error {
+		// Set default config
+		_ = configDefault(config)
+
 		iso := v8.NewIsolate()
 		global := v8.NewObjectTemplate(iso)
 
