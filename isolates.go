@@ -11,7 +11,7 @@ import (
 	v8 "github.com/katallaxie/v8go"
 )
 
-// Injector ...
+// Injector is a function that injects the context into the isolate.
 type Injector func(*fiber.Ctx, *v8.Isolate, *v8.ObjectTemplate) error
 
 // Config is the config for the isolates middleware
@@ -91,6 +91,12 @@ func configDefault(config ...Config) Config {
 	var cfg Config
 	if len(config) > 0 {
 		cfg = config[0]
+	}
+
+	if cfg.Filter == nil {
+		cfg.Filter = func(*fiber.Ctx) bool {
+			return false
+		}
 	}
 
 	return cfg
