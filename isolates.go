@@ -6,9 +6,9 @@ package isolates
 
 import (
 	"github.com/gofiber/fiber/v2"
-	"github.com/ionos-cloud/v8go-polyfills/listener"
+	"github.com/katallaxie/v8go-polyfills/listener"
 
-	v8 "rogchap.com/v8go"
+	v8 "github.com/katallaxie/v8go"
 )
 
 // Injector ...
@@ -48,7 +48,9 @@ func New(config Config) fiber.Handler {
 		in := make(chan *v8.Object)
 		out := make(chan *v8.Value)
 
-		if err := listener.AddTo(iso, global, listener.WithEvents("request", in, out)); err != nil {
+		l := listener.New(listener.WithEvents("request", in, out))
+
+		if err := l.Inject(iso, global); err != nil {
 			return c.SendStatus(fiber.StatusBadRequest)
 		}
 
