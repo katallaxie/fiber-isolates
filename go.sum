@@ -298,15 +298,8 @@ github.com/hexops/gotextdiff v1.0.3 h1:gitA9+qJrrTCsiCl7+kh75nPqQt1cx4ZkudSTLoUq
 github.com/hexops/gotextdiff v1.0.3/go.mod h1:pSWU5MAI3yDq+fZBTazCSJysOMbxWL1BSow5/V2vxeg=
 github.com/ianlancetaylor/demangle v0.0.0-20181102032728-5e5cf60278f6/go.mod h1:aSSvb/t6k1mPoxDqO4vJh6VOCGPwU4O0C2/Eqndh1Sc=
 github.com/ianlancetaylor/demangle v0.0.0-20200824232613-28f6c0f3b639/go.mod h1:aSSvb/t6k1mPoxDqO4vJh6VOCGPwU4O0C2/Eqndh1Sc=
-<<<<<<< HEAD
 github.com/inconshreveable/mousetrap v1.1.0 h1:wN+x4NVGpMsO7ErUn/mUI3vEoE6Jt13X2s0bqwp9tc8=
 github.com/inconshreveable/mousetrap v1.1.0/go.mod h1:vpF70FUmC8bwa3OWnCshd2FqLfsEA9PFc4w1p2J65bw=
-github.com/ionos-cloud/v8go-polyfills v0.0.0-20230228195223-e573af88e3fd h1:16rT+Gk1SyB7HPOmI5rMYuitPH6hFGzuT5erJU950b0=
-github.com/ionos-cloud/v8go-polyfills v0.0.0-20230228195223-e573af88e3fd/go.mod h1:62grg9Lz0/TnwMbUT2+9hWiz5xB0dXdFhUq4/UTaow4=
-=======
-github.com/inconshreveable/mousetrap v1.0.1 h1:U3uMjPSQEBMNp1lFxmllqCPM6P5u/Xq7Pgzkat/bFNc=
-github.com/inconshreveable/mousetrap v1.0.1/go.mod h1:vpF70FUmC8bwa3OWnCshd2FqLfsEA9PFc4w1p2J65bw=
->>>>>>> d096150 (chore: update polyfills)
 github.com/jgautheron/goconst v1.5.1 h1:HxVbL1MhydKs8R8n/HE5NPvzfaYmQJA3o879lE4+WcM=
 github.com/jgautheron/goconst v1.5.1/go.mod h1:aAosetZ5zaeC/2EfMeRswtxUFBpe2Hr7HzkgX4fanO4=
 github.com/jingyugao/rowserrcheck v1.1.1 h1:zibz55j/MJtLsjP1OF4bSdgXxwL1b+Vn7Tjzq7gFzUs=
@@ -324,15 +317,10 @@ github.com/julienschmidt/httprouter v1.2.0/go.mod h1:SYymIcj16QtmaHHD7aYtjjsJG7V
 github.com/julienschmidt/httprouter v1.3.0/go.mod h1:JR6WtHb+2LUe8TCKY3cZOxFyyO8IZAc4RVcycCCAKdM=
 github.com/julz/importas v0.1.0 h1:F78HnrsjY3cR7j0etXy5+TU1Zuy7Xt08X/1aJnH5xXY=
 github.com/julz/importas v0.1.0/go.mod h1:oSFU2R4XK/P7kNBrnL/FEQlDGN1/6WoxXEjSSXO0DV0=
-<<<<<<< HEAD
-=======
-github.com/junk1tm/musttag v0.4.5 h1:d+mpJ1vn6WFEVKHwkgJiIedis1u/EawKOuUTygAUtCo=
-github.com/junk1tm/musttag v0.4.5/go.mod h1:XkcL/9O6RmD88JBXb+I15nYRl9W4ExhgQeCBEhfMC8U=
 github.com/katallaxie/v8go v0.8.0 h1:P3RBFBYfpl7DuxEQ2povDoUp+HEiNSEb042M0ZOADI8=
 github.com/katallaxie/v8go v0.8.0/go.mod h1:I8VYG8yxrfjUlwNmyPA5vn/D33m0Ga0f9wjruZQNhOs=
 github.com/katallaxie/v8go-polyfills v0.0.0-20230629152722-8cf65f12bb43 h1:s9Yj2jk1LIRt+qD+IMiqggBuzEbKN2JqkM/wPbFoB/s=
 github.com/katallaxie/v8go-polyfills v0.0.0-20230629152722-8cf65f12bb43/go.mod h1:/vzG7Lip1rsNb4X2zXoX+prP0pqtxDDqw/3hneQtsQE=
->>>>>>> d096150 (chore: update polyfills)
 github.com/kisielk/errcheck v1.6.3 h1:dEKh+GLHcWm2oN34nMvDzn1sqI0i0WxPvrgiJA5JuM8=
 github.com/kisielk/errcheck v1.6.3/go.mod h1:nXw/i/MfnvRHqXa7XXmQMUB0oNFGuBrNI8d8NLy0LPw=
 github.com/kisielk/gotool v1.0.0 h1:AV2c/EiW3KqPNT9ZKl07ehoAGi4C5/01Cfbblndcapg=
@@ -1024,11 +1012,6 @@ mvdan.cc/lint v0.0.0-20170908181259-adc824a0674b h1:DxJ5nJdkhDlLok9K6qO+5290kphD
 mvdan.cc/lint v0.0.0-20170908181259-adc824a0674b/go.mod h1:2odslEg/xrtNQqCYg2/jCoyKnw3vv5biOc3JnIcYfL4=
 mvdan.cc/unparam v0.0.0-20221223090309-7455f1af531d h1:3rvTIIM22r9pvXk+q3swxUQAQOxksVMGK7sml4nG57w=
 mvdan.cc/unparam v0.0.0-20221223090309-7455f1af531d/go.mod h1:IeHQjmn6TOD+e4Z3RFiZMMsLVL+A96Nvptar8Fj71is=
-<<<<<<< HEAD
-rogchap.com/v8go v0.9.0 h1:wYbUCO4h6fjTamziHrzyrPnpFNuzPpjZY+nfmZjNaew=
-rogchap.com/v8go v0.9.0/go.mod h1:MxgP3pL2MW4dpme/72QRs8sgNMmM0pRc8DPhcuLWPAs=
-=======
->>>>>>> d096150 (chore: update polyfills)
 rsc.io/binaryregexp v0.2.0/go.mod h1:qTv7/COck+e2FymRvadv62gMdZztPaShugOCi3I+8D8=
 rsc.io/quote/v3 v3.1.0/go.mod h1:yEA65RcK8LyAZtP9Kv3t0HmxON59tX3rD+tICJqUlj0=
 rsc.io/sampler v1.3.0/go.mod h1:T1hPZKmBbMNahiBKFy5HrXp6adAjACjK9JXDnKaTXpA=

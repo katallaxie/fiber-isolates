@@ -30,9 +30,14 @@ type Config struct {
 
 // New ...
 func New(config Config) fiber.Handler {
+	// Set default config
+	cfg := configDefault(config)
+
 	return func(c *fiber.Ctx) error {
-		// Set default config
-		_ = configDefault(config)
+		// Filter request to skip middleware
+		if cfg.Filter != nil && cfg.Filter(c) {
+			return c.Next()
+		}
 
 		iso := v8.NewIsolate()
 		global := v8.NewObjectTemplate(iso)
@@ -59,7 +64,6 @@ func New(config Config) fiber.Handler {
 
 		_, err := ctx.RunScript("addListener('request', event => { return event.sourceIP === '127.0.0.1' })", "listener.js")
 		if err != nil {
-
 			return c.SendStatus(fiber.StatusBadRequest)
 		}
 

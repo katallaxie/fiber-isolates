@@ -5,17 +5,10 @@ go 1.20
 require (
 	github.com/gofiber/fiber/v2 v2.47.0
 	github.com/golang/mock v1.6.0
-<<<<<<< HEAD
 	github.com/golangci/golangci-lint v1.53.3
-	github.com/ionos-cloud/v8go-polyfills v0.0.0-20230228195223-e573af88e3fd
-	mvdan.cc/gofumpt v0.5.0
-	rogchap.com/v8go v0.9.0
-=======
-	github.com/golangci/golangci-lint v1.51.2
 	github.com/katallaxie/v8go v0.8.0
 	github.com/katallaxie/v8go-polyfills v0.0.0-20230629152722-8cf65f12bb43
-	mvdan.cc/gofumpt v0.4.0
->>>>>>> d096150 (chore: update polyfills)
+	mvdan.cc/gofumpt v0.5.0
 )
 
 require (
