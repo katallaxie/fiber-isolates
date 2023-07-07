@@ -6,13 +6,11 @@ package isolates
 
 import (
 	"github.com/gofiber/fiber/v2"
+	"github.com/katallaxie/v8go"
 	"github.com/katallaxie/v8go-polyfills/listener"
 
 	v8 "github.com/katallaxie/v8go"
 )
-
-// Injector is a function that injects the context into the isolate.
-type Injector func(*fiber.Ctx, *v8.Isolate, *v8.ObjectTemplate) error
 
 // Config is the config for the isolates middleware
 type Config struct {
@@ -22,7 +20,7 @@ type Config struct {
 
 	// Injetion defines a function to inject the context into the isolate.
 	// Optional. Default: nil
-	Injetion []Injector
+	Injetion []v8go.Injector
 
 	// Next defines a function to skip this middleware
 	Next func(*fiber.Ctx) bool
@@ -45,7 +43,7 @@ func New(config Config) fiber.Handler {
 		defer iso.Dispose()
 
 		for _, inject := range config.Injetion {
-			if err := inject(c, iso, global); err != nil {
+			if err := inject.Inject(iso, global); err != nil {
 				return c.SendStatus(fiber.StatusBadRequest)
 			}
 		}
