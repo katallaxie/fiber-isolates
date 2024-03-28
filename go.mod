@@ -3,7 +3,7 @@ module github.com/katallaxie/fiber-isolates
 go 1.20
 
 require (
-	github.com/gofiber/fiber/v2 v2.52.0
+	github.com/gofiber/fiber/v2 v2.52.4
 	github.com/golang/mock v1.6.0
 	github.com/golangci/golangci-lint v1.55.2
 	github.com/katallaxie/v8go v0.8.1-0.20230707175346-2dbf5eed5972
